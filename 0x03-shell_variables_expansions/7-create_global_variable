@@ -1,2 +1,7 @@
-#!/bin/bash 
-export BEST = "School"
+#!/bin/bash
+
+# create a new global variable named BEST with the value "School"
+BEST="School"
+
+# print the value of the variable to verify that it was created successfully
+echo "The value of BEST is: $BEST"
