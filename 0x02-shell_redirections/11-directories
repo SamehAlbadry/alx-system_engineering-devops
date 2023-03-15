@@ -1,4 +1,9 @@
 #!/bin/bash
 
-find . -type d ! -path . -print | wc -1
+# Use find to search for directories within the current directory
+# Exclude the current and parent directories, and count the number of results
+dir_count=$(find . -mindepth 1 -maxdepth 1 -type d -name '[!.]*' -printf x | wc -c)
+
+# Print the number of directories found
+echo $dir_count
 
