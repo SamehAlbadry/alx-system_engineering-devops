@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Use find to search for directories within the current directory
+# Use ls to list all directories (including hidden ones) in the current directory
 # Exclude the current and parent directories, and count the number of results
-dir_count=$(find . -mindepth 1 -maxdepth 1 -type d -name '[!.]*' -printf x | wc -c)
-
-# Print the number of directories found
-echo $dir_count
+dir_count=$(ls -d .*/ */ 2>/dev/null | grep -v -E '/(\.|..)/' | wc -l)
 
