@@ -1,15 +1,2 @@
 #!/bin/bash
-
-shopt -s globstar nullglob
-
-count=0
-
-for file in **/*/
-do
-    if [[ ! "$file" =~ ^\.\.\/?$ && -d "$file" ]]; then
-        ((count++))
-    fi
-done
-
-echo "$count"
-
+find . -type d -not -name '.' | wc -l
