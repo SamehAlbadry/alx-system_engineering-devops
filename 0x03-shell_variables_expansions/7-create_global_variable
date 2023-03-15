@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# create a new global variable named BEST with the value "School"
-echo BEST="School"
+export  BEST= "School"
 
 
